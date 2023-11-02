@@ -8,6 +8,9 @@ export const SendData = () => {
             <button onClick={()=>{
       
                 ipcRenderer.send('anything-asynchronous', 'ping')
+                ipcRenderer.on('asynchronous-reply', (event, arg) => {
+                    console.log("Hiii",arg) // prints "Hiii pong"
+                    })
       
             }}>Async</button>
 
@@ -15,7 +18,7 @@ export const SendData = () => {
             <button onClick={()=>{
                              
                 // prints "pong"         
-                console.log(ipcRenderer.sendSync('anything-synchronous', 'pong')) 
+                console.log('sync',ipcRenderer.sendSync('anything-synchronous',   'ping')) 
                              
             
             }}>Sync</button>
