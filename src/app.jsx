@@ -1,5 +1,10 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
+import { MainUi } from './mainui.jsx';
 
 const root = createRoot(document.body);
-root.render(<h2>Test Check !!! Hello World, This is React Js</h2>);
+root.render(
+    <>
+        <h1>Hello World</h1>
+        <MainUi></MainUi>
+    </>);
